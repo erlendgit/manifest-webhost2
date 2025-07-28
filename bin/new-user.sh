@@ -8,7 +8,7 @@ USERNAME=$1
 
 echo "Create system user"
 useradd -b /var/www -m -r -s /bin/bash $USERNAME
-su $USERNAME -c "ssh-keygen -b 4096 -f ~/.ssh/id_rsa -N ''"
+su $USERNAME -c "ssh-keygen -b 4096 -f ~/.ssh/id_auth -N ''"
 
 PASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 
@@ -27,5 +27,5 @@ echo MYSQL_PASS=$PASS
 echo MYSQL_DATABASE=$USERNAME
 echo "SSH public key"
 echo "============================="
-su $USERNAME -c "cat ~/.ssh/id_rsa.pub"
+su $USERNAME -c "cat ~/.ssh/id_auth.pub"
 echo "============================="

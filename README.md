@@ -2,6 +2,7 @@
 
 ```bash
 # Als root user.
+cd /var/local
 git clone git@github.com:erlendgit/manifest-webhost2.git webhost2
 cd webhost2
 
