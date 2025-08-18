@@ -1,0 +1,40 @@
+server {
+    root $WOPL_TEST_PROJECT_ROOT/frontend/bin;
+
+    index index.html;
+
+    location /uploads {
+        alias $WOPL_TEST_HOME/uploads;
+    }
+
+    location /public {
+        alias $WOPL_TEST_PROJECT_ROOT/frontend/public;
+    }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    access_log $WOPL_TEST_HOME/logs/frontend-access.log;
+    error_log  $WOPL_TEST_HOME/logs/frontend-error.log;
+}
+
+server {
+    server_name $WOPL_TEST_FRONTEND_HOSTNAME;
+
+    listen              443 ssl;
+    listen              [::]:443;
+    ssl_certificate     /var/local/cert/stgenv.nl/bundle.cert;
+    ssl_certificate_key /var/local/cert/stgenv.nl/wildcard_stgenv_nl.key;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
+}
+
+# Redirect non-ssl traffic to ssl
+server {
+    server_name $WOPL_TEST_FRONTEND_HOSTNAME
+
+    listen      80;
+    listen      [::]:80;
+    return      301 https://$WOPL_TEST_FRONTEND_HOSTNAME$request_uri;
+}

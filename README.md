@@ -1,7 +1,5 @@
 # Webhost2
 
-## GitHUB toegang
-
 #### Maak een ssl key
 
 ```bash
@@ -23,14 +21,14 @@ Host github.com
 ```bash
 cd /var/local
 git clone git@github.com:erlendgit/manifest-webhost2.git webhost2
-cd webhost2
 
-cp .env-example .env
-vim .env
+cd webhost2
 bin/setup.sh
 ```
 
-* Installeer ssl certificaten
+#### Installeer ssl certificaten
+
+#### Maak /etc/environment up to date met environment-example.txt
 
 ## Nieuwe applicatie
 
