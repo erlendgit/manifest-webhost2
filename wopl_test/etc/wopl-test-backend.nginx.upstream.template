@@ -1,8 +1,0 @@
-# Proxy settings to the backend
-# Put this file in the /etc/nginx/conf.d/ directory
-#
-
-upstream wopl_test_backend {
-    server 127.0.0.1:$WOPL_TEST_BACKEND_PORT;
-    keepalive 30;
-}

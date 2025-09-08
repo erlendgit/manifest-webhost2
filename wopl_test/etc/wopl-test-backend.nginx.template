@@ -17,3 +17,7 @@ server {
     include $CONFIGURATION_ROOT/etc/ssl-common.nginx;
 }
 
+upstream wopl_test_backend {
+    server 127.0.0.1:$WOPL_TEST_BACKEND_PORT;
+    keepalive 30;
+}
