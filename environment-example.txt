@@ -4,7 +4,7 @@
 export CONFIGURATION_ROOT=/var/www/conf
 
 # Ports
-export WOPL_TEST_BACKEND_BACKEND_PORT=
+export WOPL_TEST_BACKEND_PORT=
 
 # Workout plan
 export WOPL_TEST_HOME=
