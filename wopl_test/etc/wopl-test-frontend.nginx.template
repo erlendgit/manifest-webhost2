@@ -1,22 +1,22 @@
 server {
-    root $WOPL_TEST_HOME/project/frontend/bin;
+    root ${WOPL_TEST_HOME}/project/frontend/bin;
 
     index index.html;
 
     location /uploads {
-        alias $WOPL_TEST_HOME/uploads;
+        alias ${WOPL_TEST_HOME}/uploads;
     }
 
     location /public {
-        alias $WOPL_TEST_HOME/project/frontend/public;
+        alias ${WOPL_TEST_HOME}/project/frontend/public;
     }
 
     location / {
         try_files $uri $uri/ =404;
     }
 
-    access_log $WOPL_TEST_HOME/logs/frontend-access.log;
-    error_log  $WOPL_TEST_HOME/logs/frontend-error.log;
+    access_log ${WOPL_TEST_HOME}/logs/frontend-access.log;
+    error_log  ${WOPL_TEST_HOME}/logs/frontend-error.log;
 }
 
 server {
