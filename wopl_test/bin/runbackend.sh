@@ -5,6 +5,8 @@ set -e
 
 echo "Started at $(date)"
 
+env
+
 if [[ $(whoami) != $WOPL_TEST_PROJECT_USER ]]; then
   echo "Should run as $WOPL_TEST_PROJECT_USER"
   exit 2
