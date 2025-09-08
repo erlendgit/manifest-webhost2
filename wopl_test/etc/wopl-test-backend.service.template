@@ -1,6 +1,7 @@
 [Unit]
 Description=WOPL Backend service
 After=network.target
+EnvironmentFile=/etc/environment
 
 [Service]
 Type=simple
