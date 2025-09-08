@@ -2,11 +2,17 @@
 
 cd $WOPL_TEST_PROJECT_ROOT
 
+rm -rf venv
+python 3.13 -m venv venv
 source venv/bin/activate
+pip install -r backend2/requirements.prod.txt
 
-cd backend2
+cd $WOPL_TEST_PROJECT_ROOT/backend2
+
 set -o allexport
 source .env
 set +o allexport
+
+python manage.py migrate
 
 uvicorn _django.asgi:application --port $WOPL_TEST_BACKEND_BACKEND_PORT --host 0.0.0.0

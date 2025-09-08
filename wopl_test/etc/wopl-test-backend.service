@@ -6,8 +6,10 @@ Type=simple
 ExecStart=$CONFIGURATION_ROOT/wopl_test/bin/runbackend.sh
 User=$WOPL_TEST_PROJECT_USER
 Group=$WOPL_TEST_PROJECT_GROUP
+# De naam van een systemd subfolder
 RuntimeDirectory=$WOPL_TEST_PROJECT_USER
-WorkingDirectory=$WOPL_TEST_PROJECT_ROOT
+# Dit is wel een pad
+WorkingDirectory=$WOPL_TEST_PROJECT_CWD
 Restart=always
 StandardOutput=append:$WOPL_TEST_HOME/logs/backend-stdout.log
 StandardError=append:$WOPL_TEST_HOME/logs/backend-stderr.log

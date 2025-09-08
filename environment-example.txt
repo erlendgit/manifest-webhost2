@@ -1,7 +1,7 @@
 # Keep /etc/environment in sync with me and fill in the values
 # Keep passwords out of this environment file
 
-CONFIGURATION_ROOT=/var/www/conf
+export CONFIGURATION_ROOT=/var/www/conf
 
 # Ports
 export WOPL_TEST_BACKEND_BACKEND_PORT=
@@ -9,9 +9,8 @@ export WOPL_TEST_BACKEND_BACKEND_PORT=
 # Workout plan
 export WOPL_TEST_BACKEND_EXECUTABLE=
 export WOPL_TEST_HOME=
-export WOPL_TEST_PROJECT_ROOT=
+export WOPL_TEST_PROJECT_CWD=
 export WOPL_TEST_PROJECT_USER=
 export WOPL_TEST_PROJECT_GROUP=
 export WOPL_TEST_BACKEND_HOSTNAME=
 export WOPL_TEST_FRONTEND_HOSTNAME=
-
