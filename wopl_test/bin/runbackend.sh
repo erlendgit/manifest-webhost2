@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Exit on error
+set -e
+
 if [[ $(whoami) != $WOPL_TEST_PROJECT_USER ]]; then
   echo "Should run as $WOPL_TEST_PROJECT_USER"
   exit 2
