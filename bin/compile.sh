@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+export ENVSUBST=$CONFIGURATION_ROOT/bin/envsubst.py
+
 compile_configuration_files() {
   mkdir -p compiled
-  find . -name '*.template' -exec sh -c 'envsubst < "$0" > "compiled/${0%.template}"' {} \;
+  find . -name '*.template' -exec sh -c '$ENVSUBST < "$0" > "compiled/${0%.template}"' {} \;
 }
 
 cd $CONFIGURATION_ROOT/wopl_test/etc
