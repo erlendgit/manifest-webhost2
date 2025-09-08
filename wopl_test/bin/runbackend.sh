@@ -3,7 +3,7 @@
 cd $WOPL_TEST_HOME
 
 rm -rf venv
-python 3.13 -m venv venv
+python3.13 -m venv venv
 source venv/bin/activate
 pip install -r project/backend2/requirements.prod.txt
 
