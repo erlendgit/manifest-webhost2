@@ -3,7 +3,8 @@
 # Exit on error
 set -e
 
-echo "Started at $(date)"
+echo "\n\n===\nStarted at $(date)\n===\n"
+source /etc/environment
 
 env
 
