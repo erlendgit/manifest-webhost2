@@ -9,7 +9,7 @@ User=${WOPL_TEST_PROJECT_USER}
 Group=${WOPL_TEST_PROJECT_GROUP}
 RuntimeDirectory=${WOPL_TEST_PROJECT_USER}
 WorkingDirectory=${WOPL_TEST_HOME}/project/backend2
-Restart=never
+Restart=No
 StandardOutput=append:${WOPL_TEST_HOME}/logs/backend-stdout.log
 StandardError=append:${WOPL_TEST_HOME}/logs/backend-stderr.log
 
