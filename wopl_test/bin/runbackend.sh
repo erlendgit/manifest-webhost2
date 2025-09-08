@@ -29,4 +29,4 @@ set +o allexport
 
 python manage.py migrate
 
-uvicorn _project.asgi:application --port $WOPL_TEST_BACKEND_BACKEND_PORT --host 0.0.0.0
+uvicorn _project.asgi:application --port $WOPL_TEST_BACKEND_PORT --host 0.0.0.0
