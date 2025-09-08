@@ -3,7 +3,7 @@
 # Exit on error
 set -e
 
-env | grep WOPL_TEST_PROJECT_USER
+echo "Started at $(date)"
 
 if [[ $(whoami) != $WOPL_TEST_PROJECT_USER ]]; then
   echo "Should run as $WOPL_TEST_PROJECT_USER"
