@@ -1,5 +1,5 @@
 server {
-    root $WOPL_TEST_PROJECT_ROOT/frontend/bin;
+    root $WOPL_TEST_HOME/project/frontend/bin;
 
     index index.html;
 
@@ -8,7 +8,7 @@ server {
     }
 
     location /public {
-        alias $WOPL_TEST_PROJECT_ROOT/frontend/public;
+        alias $WOPL_TEST_HOME/project/frontend/public;
     }
 
     location / {

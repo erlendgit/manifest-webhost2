@@ -9,7 +9,7 @@ Group=$WOPL_TEST_PROJECT_GROUP
 # De naam van een systemd subfolder
 RuntimeDirectory=$WOPL_TEST_PROJECT_USER
 # Dit is wel een pad
-WorkingDirectory=$WOPL_TEST_PROJECT_CWD
+WorkingDirectory=$WOPL_TEST_HOME/project/backend2
 Restart=always
 StandardOutput=append:$WOPL_TEST_HOME/logs/backend-stdout.log
 StandardError=append:$WOPL_TEST_HOME/logs/backend-stderr.log
