@@ -1,0 +1,7 @@
+#
+# Include this settings in the server section
+#
+    listen              443 ssl;
+    listen              [::]:443 ssl;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
