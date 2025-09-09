@@ -7,6 +7,8 @@ fi
 
 cd $WOPL_TEST_HOME/project/frontend
 
+source ~/.bashrc
+
 set -o allexport
 source .env
 set +o allexport
