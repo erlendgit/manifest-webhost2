@@ -15,11 +15,12 @@ fi
 
 cd $WOPL_TEST_HOME
 
-rm -rf venv
-python3.13 -m venv venv
+if [[ ! -d venv ]]; then
+  python3.13 -m venv venv
+fi
+
 source venv/bin/activate
 pip install -r project/env/backend/requirements.prod.txt
-# add: python-dateutil==2.9.0.post0
 
 cd $WOPL_TEST_HOME/project/backend2
 
