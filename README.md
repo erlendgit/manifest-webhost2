@@ -39,3 +39,9 @@ bin/new-user.sh <app-name>
 * Maak symlinks voor de services
 * Maak symlinks voor de nginx configuratie
 * Bepaal poorten voor de django runners.
+
+## Troubleshooting
+
+### systemd
+
+Na het wijzigen van een systemd configuratie bestand kan een `systemctl daemon-reload` nodig zijn.
