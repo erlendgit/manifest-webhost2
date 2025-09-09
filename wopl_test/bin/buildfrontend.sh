@@ -5,10 +5,10 @@ if [[ $(whoami) != $WOPL_TEST_PROJECT_USER ]]; then
   exit 2
 fi
 
-cd $WOPL_TEST_HOME/project/frontend
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-source ~/.bashrc
-source ~/.profile
+cd $WOPL_TEST_HOME/project/frontend
 
 set -o allexport
 source .env
