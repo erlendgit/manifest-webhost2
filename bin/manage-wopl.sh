@@ -5,4 +5,4 @@ if [[ ! -d wopl_test ]]; then
   exit 2
 fi
 
-su wopl_test wopl_test/bin/manage.sh "$@"
+su wopl_test -- wopl_test/bin/manage.sh "$@"
