@@ -14,6 +14,9 @@ server {
         proxy_pass http://wopl_test_backend;
         include $CONFIGURATION_ROOT/etc/proxy-common.nginx;
     }
+    location /static/ {
+        alias $WOPL_TEST_HOME/api_static/;
+    }
     include $CONFIGURATION_ROOT/etc/ssl-common.nginx;
 }
 

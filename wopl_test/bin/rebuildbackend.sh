@@ -7,6 +7,9 @@ fi
 
 cd $WOPL_TEST_HOME
 
+mkdir -p api_static
+mkdir -p api_uploads
+
 rm -rf venv
 
 service wopl-test-backend restart
