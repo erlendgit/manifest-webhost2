@@ -1,0 +1,17 @@
+[Unit]
+Description=WOPL Worker service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=$CONFIGURATION_ROOT/wopl_test/etc/runworker.sh
+User=$WOPL_TEST_PROJECT_USER
+Group=$WOPL_TEST_PROJECT_GROUP
+RuntimeDirectory=$WOPL_TEST_PROJECT_USER
+WorkingDirectory=$WOPL_TEST_HOME/project/backend2
+Restart=No
+StandardOutput=append:$WOPL_TEST_HOME/logs/worker-stdout.log
+StandardError=append:$WOPL_TEST_HOME/logs/worker-stderr.log
+
+[Install]
+WantedBy=multi-user.target

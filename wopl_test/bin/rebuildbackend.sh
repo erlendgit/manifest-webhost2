@@ -13,3 +13,4 @@ mkdir -p api_uploads
 rm -rf venv
 
 service wopl-test-backend restart
+service wopl-test-worker restart
