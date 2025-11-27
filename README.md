@@ -36,7 +36,7 @@ bin/setup.sh
 bin/new-user.sh <app-name>
 ```
 
-* Maak symlinks voor de services
+* Maak symlinks voor de services (/etc/systemd/system)
 * Maak symlinks voor de nginx configuratie
 * Bepaal poorten voor de django runners.
 
