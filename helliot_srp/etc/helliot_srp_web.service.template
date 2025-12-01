@@ -1,0 +1,16 @@
+Description=Helliot SRP web
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=$HSRP_HOME/project/bin/run-stage.sh $HSRP_BACKEND_PORT
+User=$HSRP_DAEMON_USER
+Group=$HSRP_PROJECT_GROUP
+RuntimeDirectory=$HSRP_HOME
+WorkingDirectory=$HSRP_HOME/project/src
+Restart=always
+StandardOutput=append:$HSRP_HOME/project/log/web.log
+StandardError=append:$HSRP_HOME/project/log/web_err.log
+
+[Install]
+WantedBy=multi-user.target
