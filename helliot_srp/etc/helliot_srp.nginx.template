@@ -1,0 +1,22 @@
+server {
+    server_name         $HSRP_BACKEND_HOSTNAME;
+    access_log          $HSRP_HOME/project/log/backend-access.log;
+    error_log           $HSRP_HOME/project/log/backend-error.log;
+
+    ssl_certificate     /var/local/cert/stgenv.nl/bundle.cert;
+    ssl_certificate_key /var/local/cert/stgenv.nl/wildcard_stgenv_nl.key;
+
+    location /static {
+        alias $HSRP_HOME/project/src/static;
+    }
+    location / {
+        proxy_pass http://helliot_srp;
+        include $CONFIGURATION_ROOT/etc/proxy-common.nginx;
+    }
+    include $CONFIGURATION_ROOT/etc/ssl-common.nginx;
+}
+
+upstream helliot_srp {
+    server 127.0.0.1:$HSRP_BACKEND_PORT;
+    keepalive 30;
+}
