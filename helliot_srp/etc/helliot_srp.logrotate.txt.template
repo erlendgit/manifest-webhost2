@@ -1,0 +1,8 @@
+$HSRP_PROJECT_HOME/project/log/*.log {
+	daily
+	missingok
+	rotate 14
+	notifempty
+	copytruncate
+	su $HSRP_PROJECT_USER $HSRP_PROJECT_GROUP
+}
