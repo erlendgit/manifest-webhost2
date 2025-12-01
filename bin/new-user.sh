@@ -5,9 +5,13 @@ then
   exit 2
 fi
 USERNAME=$1
+GROUPNAME=$1
+SERVICEUSER="$1_service"
 
 echo "Create system user"
 useradd -b /var/www -m -r -s /bin/bash $USERNAME
+useradd -r -s /bin/false $SERVICEUSER
+usermod -aG www-data $GROUPNAME $SERVICEUSER
 su $USERNAME -c "ssh-keygen -b 4096 -f ~/.ssh/id_gitlab -N ''"
 
 su $USERNAME -c "echo 'Host github.com' > ~/.ssh/config"
@@ -26,6 +30,8 @@ echo "Flush..."
 sudo mysql -e "FLUSH PRIVILEGES;"
 
 echo
+echo USERNAME=$USERNAME
+echo SERVICEUSER=$SERVICEUSER
 echo MYSQL_USER=$USERNAME
 echo MYSQL_PASS=$PASS
 echo MYSQL_DATABASE=$USERNAME
