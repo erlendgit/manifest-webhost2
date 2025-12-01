@@ -17,6 +17,7 @@ su $USERNAME -c "ssh-keygen -b 4096 -f ~/.ssh/id_gitlab -N ''"
 su $USERNAME -c "echo 'Host github.com' > ~/.ssh/config"
 su $USERNAME -c "echo '  User git' >> ~/.ssh/config"
 su $USERNAME -c "echo '  IdentityFile ~/.ssh/id_gitlab' >> ~/.ssh/config"
+su $USERNAME -c "chmod 600 ~/.ssh/config"
 
 PASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 
