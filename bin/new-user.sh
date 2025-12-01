@@ -10,7 +10,8 @@ SERVICEUSER="$1_service"
 
 echo "Create system user"
 useradd -d /var/www/$USERNAME -m -r -s /bin/bash $USERNAME
-useradd -r -s /bin/false -G $GROUPNAME $SERVICEUSER
+useradd -r -s /bin/false $SERVICEUSER
+usermod -G $GROUPNAME $SERVICEUSER
 su $USERNAME -c "ssh-keygen -b 4096 -f ~/.ssh/id_gitlab -N ''"
 
 su $USERNAME -c "echo 'Host github.com' > ~/.ssh/config"
