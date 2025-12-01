@@ -18,6 +18,7 @@ su $USERNAME -c "echo 'Host github.com' > ~/.ssh/config"
 su $USERNAME -c "echo '  User git' >> ~/.ssh/config"
 su $USERNAME -c "echo '  IdentityFile ~/.ssh/id_gitlab' >> ~/.ssh/config"
 su $USERNAME -c "chmod 600 ~/.ssh/config"
+su $USERNAME -c "echo 'umask 022' >> ~/.bashrc"
 
 PASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 
