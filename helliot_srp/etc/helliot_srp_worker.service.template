@@ -3,14 +3,14 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=$HSRP_HOME/project/bin/run-celery-stage.sh
+ExecStart=$CONFIGURATION_ROOT/helliot_srp/etc/runworker.sh
 User=$HSRP_DAEMON_USER
 Group=$HSRP_PROJECT_GROUP
 RuntimeDirectory=$HSRP_HOME
 WorkingDirectory=$HSRP_HOME/project/src
 Restart=always
-StandardOutput=append:$HSRP_HOME/project/log/background.log
-StandardError=append:$HSRP_HOME/project/log/background_err.log
+StandardOutput=append:$HSRP_HOME/project/log/worker.log
+StandardError=append:$HSRP_HOME/project/log/worker_err.log
 
 [Install]
 WantedBy=multi-user.target

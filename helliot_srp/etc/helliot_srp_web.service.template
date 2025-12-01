@@ -3,7 +3,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=$HSRP_HOME/project/bin/run-stage.sh $HSRP_BACKEND_PORT
+ExecStart=$CONFIGURATION_ROOT/helliot_srp/etc/runweb.sh $HSRP_BACKEND_PORT
 User=$HSRP_DAEMON_USER
 Group=$HSRP_PROJECT_GROUP
 RuntimeDirectory=$HSRP_HOME
