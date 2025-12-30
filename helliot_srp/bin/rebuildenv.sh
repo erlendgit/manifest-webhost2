@@ -11,7 +11,7 @@ if [[ -d venv ]]; then
   rm -rf venv
 fi
 
-python3 -m venv venv
+python3.13 -m venv venv
 source venv/bin/activate
 
 cd project
