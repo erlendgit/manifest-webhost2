@@ -18,4 +18,4 @@ if [[ ! -d venv ]]; then
 fi
 
 source venv/bin/activate
-pip install -r project/requirements.txt
+pip install -r project/env/backend/requirements.prod.txt
