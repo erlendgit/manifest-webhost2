@@ -16,6 +16,7 @@ source venv/bin/activate
 
 cd project
 pip install --upgrade pip
+pip install setuptools==80.9.0
 pip install -r requirements.txt
 
 npm install
