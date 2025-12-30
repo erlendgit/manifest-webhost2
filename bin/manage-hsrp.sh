@@ -5,4 +5,4 @@ if [[ ! -d helliot_srp ]]; then
   exit 2
 fi
 
-su helliot_srp_service -- helliot_srp/bin/manage.sh "$@"
+runuser helliot_srp_service -s /bin/bash -- helliot_srp/bin/manage.sh "$@"
