@@ -18,5 +18,4 @@ if [[ ! -d venv ]]; then
 fi
 
 source venv/bin/activate
-pip install setuptools==80.9.0
 pip install -r project/requirements.txt
