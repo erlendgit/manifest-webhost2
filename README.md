@@ -44,4 +44,7 @@ bin/new-user.sh <app-name>
 
 ### systemd
 
-Na het wijzigen van een systemd configuratie bestand kan een `systemctl daemon-reload` nodig zijn.
+```shell
+# Na het toevoegen van een symlink aan /etc/systemd/system
+systemctl daemon-reload
+```
