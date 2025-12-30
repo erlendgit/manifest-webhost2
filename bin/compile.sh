@@ -9,3 +9,6 @@ compile_configuration_files() {
 
 cd $CONFIGURATION_ROOT/wopl_test/etc
 compile_configuration_files
+
+cd $CONFIGURATION_ROOT/helliot_srp/etc
+compile_configuration_files
