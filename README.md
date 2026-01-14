@@ -36,6 +36,13 @@ bin/setup.sh
 bin/new-user.sh <app-name>
 ```
 
+* Maak configuratie bestanden aan in de `etc` map (deze repo)
+  * Systemd
+  * Nginx
+  * Logrotate
+* Voeg de `etc` map toe aan `./bin/compile.sh` (deze repo)
+* Neem de rsa key over in github
+* doe een checkout van de app-repo
 * Maak symlinks voor de services (/etc/systemd/system)
 * Maak symlinks voor de nginx configuratie
 * Bepaal poorten voor de django runners.
