@@ -20,4 +20,4 @@ set -o allexport
 source ../.env
 set +o allexport
 
-python manage.py rqworker default
+python -m celery -A _django worker -l info -E
