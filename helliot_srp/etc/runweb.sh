@@ -22,4 +22,4 @@ set +o allexport
 
 python manage.py migrate
 
-uvicorn _django.asgi:application --port $WOPL_TEST_BACKEND_PORT --host 0.0.0.0
+uvicorn _django.asgi:application --port $HSRP_BACKEND_PORT --host 0.0.0.0
