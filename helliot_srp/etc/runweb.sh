@@ -14,13 +14,11 @@ fi
 cd $HSRP_HOME
 source venv/bin/activate
 
-cd project
+cd project/src
 
 set -o allexport
-source .env
+source ../.env
 set +o allexport
-
-cd src
 
 python manage.py migrate
 
