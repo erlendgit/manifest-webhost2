@@ -1,0 +1,8 @@
+$WOPL_TEST_HOME/logs/*.log {
+	daily
+	missingok
+	rotate 14
+	notifempty
+	copytruncate
+	su root root
+}
