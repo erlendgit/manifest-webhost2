@@ -4,5 +4,5 @@ $HSRP_HOME/project/log/*.log {
 	rotate 14
 	notifempty
 	copytruncate
-	su $HSRP_PROJECT_USER $HSRP_PROJECT_GROUP
+	su root root
 }
