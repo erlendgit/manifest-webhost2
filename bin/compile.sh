@@ -12,3 +12,5 @@ compile_configuration_files
 
 cd $CONFIGURATION_ROOT/helliot_srp/etc
 compile_configuration_files
+
+systemctl daemon-reload
