@@ -22,4 +22,4 @@ set +o allexport
 
 python manage.py migrate
 
-uvicorn _django.asgi:application --port $HSRP_BACKEND_PORT --host 0.0.0.0
+gunicorn _django.wsgi:application --bind 0.0.0.0:$HSRP_BACKEND_PORT --log-level=info
