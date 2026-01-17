@@ -55,3 +55,34 @@ bin/new-user.sh <app-name>
 # Na het toevoegen van een symlink aan /etc/systemd/system
 systemctl daemon-reload
 ```
+
+### Email DNS
+
+Om de mail te gebruiken van TransIP moeten de volgende DNS records toegevoegd worden:
+
+```
+Naam: @
+TTL: 5 minuten
+Type: TXT
+Waarde: v=spf1 include:_spf.transip.email ~all
+
+Naam: x-transip-mail-auth
+TTL: 5 minuten
+Type: TXT
+Waarde: f502e8b31e9d9b5bf412683db529680f2d328e3ff984ac5f1ee5ebfdf6047e4b
+
+Naam: transip-A._domainkey
+TTL: 5 minuten
+Type: CNAME
+Waarde: _dkim-A.transip.email.
+
+Naam: transip-B._domainkey
+TTL: 5 minuten
+Type: CNAME
+Waarde: _dkim-B.transip.email.
+
+Naam: transip-C._domainkey
+TTL: 5 minuten
+Type: CNAME
+Waarde: _dkim-C.transip.email.
+```
