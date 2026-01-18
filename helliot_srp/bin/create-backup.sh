@@ -5,4 +5,6 @@ if [[ $(whoami) != 'root' ]]; then
   exit 2
 fi
 
+cd $CONFIGURATION_ROOT
+
 runuser $HSRP_PROJECT_USER -s /bin/bash -- helliot_srp/etc/create-backup.sh
