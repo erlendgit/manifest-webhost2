@@ -3,6 +3,8 @@ After=network.target
 
 [Service]
 Type=simple
+# Wait for the database
+ExecStartPre=/bin/sleep 15
 ExecStart=$CONFIGURATION_ROOT/helliot_srp/etc/runweb.sh $HSRP_BACKEND_PORT
 User=$HSRP_DAEMON_USER
 Group=$HSRP_PROJECT_GROUP

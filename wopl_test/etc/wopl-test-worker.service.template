@@ -4,6 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
+# Wait for the database
+ExecStartPre=/bin/sleep 15
 ExecStart=$CONFIGURATION_ROOT/wopl_test/etc/runworker.sh
 User=$WOPL_TEST_PROJECT_USER
 Group=$WOPL_TEST_PROJECT_GROUP
