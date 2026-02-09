@@ -28,8 +28,7 @@ server {
 }
 
 server {
-    server_name         workoutmasterplan.com;
-    aliases             www.workoutmasterplan.com;
+    server_name         workoutmasterplan.com www.workoutmasterplan.com;
     root                $WOPL_TEST_HOME/project/frontend/dist;
     access_log          $WOPL_TEST_HOME/logs/frontend-access.log;
     error_log           $WOPL_TEST_HOME/logs/frontend-error.log;
