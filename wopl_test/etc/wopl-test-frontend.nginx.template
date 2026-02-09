@@ -25,8 +25,34 @@ server {
 
     index index.html;
     include $CONFIGURATION_ROOT/etc/ssl-common.nginx;
-
 }
+
+server {
+    server_name         workoutmasterplan.com;
+    alias               www.workoutmasterplan.com;
+    root                $WOPL_TEST_HOME/project/frontend/dist;
+    access_log          $WOPL_TEST_HOME/logs/frontend-access.log;
+    error_log           $WOPL_TEST_HOME/logs/frontend-error.log;
+
+    ssl_certificate     /var/local/cert/workoutmasterplan.com/bundle.cert;
+    ssl_certificate_key /var/local/cert/workoutmasterplan.com/certificate.key;
+
+    location /uploads {
+        alias $WOPL_TEST_HOME/uploads;
+    }
+
+    location /public {
+        alias $WOPL_TEST_HOME/project/frontend/public;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    index index.html;
+    include $CONFIGURATION_ROOT/etc/ssl-common.nginx;
+}
+
 
 # Redirect non-ssl traffic to ssl
 server {
