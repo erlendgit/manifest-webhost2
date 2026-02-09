@@ -28,7 +28,7 @@ server {
 }
 
 server {
-    server_name         workoutmasterplan.com www.workoutmasterplan.com;
+    server_name         workoutmasterplan.com;
     root                $WOPL_TEST_HOME/project/frontend/dist;
     access_log          $WOPL_TEST_HOME/logs/frontend-access.log;
     error_log           $WOPL_TEST_HOME/logs/frontend-error.log;
@@ -52,12 +52,21 @@ server {
     include $CONFIGURATION_ROOT/etc/ssl-common.nginx;
 }
 
+server {
+    server_name         www.workoutmasterplan.com;
+
+    ssl_certificate     /var/local/cert/workoutmasterplan.com/bundle.cert;
+    ssl_certificate_key /var/local/cert/workoutmasterplan.com/certificate.key;
+
+    include $CONFIGURATION_ROOT/etc/ssl-common.nginx;
+    return 301 https://workoutmasterplan.com$request_uri;
+}
 
 # Redirect non-ssl traffic to ssl
 server {
-    server_name $WOPL_TEST_FRONTEND_HOSTNAME
+    server_name $WOPL_TEST_FRONTEND_HOSTNAME workoutmasterplan.com www.workoutmasterplan.com
 
     listen      80;
     listen      [::]:80;
-    return      301 https://$WOPL_TEST_FRONTEND_HOSTNAME$request_uri;
+    return      301 https://workoutmasterplan.com$request_uri;
 }
