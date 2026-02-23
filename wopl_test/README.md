@@ -59,8 +59,9 @@ cd ~/project
 git pull
 
 # Run as root from the webhost2 /var/local/webhost2 folder
-./wopl_test/preparepython.sh
-./wopl_test/restartbackend.sh
+su wopl_test ./wopl_test/bin/preparepython.sh
+./wopl_test/bin/rebuildfrontend.sh
+./wopl_test/bin/restartbackend.sh
 ```
 
 Inspect the logs afterwards.
