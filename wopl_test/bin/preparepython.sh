@@ -13,6 +13,10 @@ fi
 
 cd $WOPL_TEST_HOME
 
+mkdir -p api_static
+mkdir -p api_uploads
+
+rm -rf venv
 if [[ ! -d venv ]]; then
   python3.13 -m venv venv
 fi
