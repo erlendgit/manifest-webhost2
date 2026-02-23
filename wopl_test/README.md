@@ -16,7 +16,8 @@ nvm install 20
 
 ## Celery
 
-Not yet implemented.
+* Celery backend
+* `runworker.sh` is started in a service
 
 ## Web backend
 
@@ -48,3 +49,18 @@ export WOPL_TEST_PROJECT_GROUP=
 export WOPL_TEST_BACKEND_HOSTNAME=
 export WOPL_TEST_FRONTEND_HOSTNAME=
 ```
+
+
+## Deploy
+
+```
+# Run as wopl_test user:
+cd ~/project
+git pull
+
+# Run as root from the webhost2 /var/local/webhost2 folder
+./wopl_test/preparepython.sh
+./wopl_test/restartbackend.sh
+```
+
+Inspect the logs afterwards.
