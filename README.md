@@ -49,6 +49,16 @@ bin/new-user.sh <app-name>
 
 ## Troubleshooting
 
+### NginX
+
+```shell
+# Laat zien dat het fout gaat
+service nginx configtest
+
+# Toon ook de fout.
+nginx -t
+```
+
 ### systemd
 
 ```shell
