@@ -1,0 +1,45 @@
+#
+# To be used in the `server` section of nginx.
+#
+
+root                $WOPL_TEST_HOME/project/frontend/dist;
+access_log          $WOPL_TEST_HOME/logs/frontend-access.log;
+error_log           $WOPL_TEST_HOME/logs/frontend-error.log;
+
+# Entry point.
+index               index.html;
+
+# Add compression.
+gzip                on;
+gzip_vary           on;
+gzip_min_length     1024;
+gzip_types          text/plain text/css text/xml text/javascript application/x-javascript application/xml+rss application/json application/javascript;
+
+# Security headers
+add_header X-Frame-Options "SAMEORIGIN" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header X-XSS-Protection "1; mode=block" always;
+
+map $uri $cache_control {
+    ~^/assets/.*\.[0-9a-f]{8}\.  "public, max-age=31536000, immutable";
+    ~^/uploads/                 "public, max-age=31536000, immutable";
+    ~^/public/                  "public, max-age=31536000, immutable";
+    ~\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp)$ "public, max-age=86400";
+    default                     "no-store, no-cache, must-revalidate, max-age=0";
+}
+
+location = /index.html {
+    try_files $uri =404;
+}
+
+location /uploads {
+    alias $WOPL_TEST_HOME/uploads;
+}
+
+location /public {
+    alias $WOPL_TEST_HOME/project/frontend/public;
+}
+
+location / {
+    try_files $uri $uri/ /index.html;
+}
