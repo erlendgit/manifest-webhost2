@@ -41,6 +41,7 @@ bin/new-user.sh <app-name>
   * Nginx
   * Logrotate
 * Voeg de `etc` map toe aan `./bin/compile.sh` (deze repo)
+* Voeg services to aan post-reboot.sh.
 * Neem de rsa key over in github
 * doe een checkout van de app-repo
 * Maak symlinks voor de services (/etc/systemd/system)
